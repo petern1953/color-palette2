@@ -1,0 +1,21 @@
+// /* MAP: get, has-key, keys, merge, remove, @font-feature-values */
+@use "sass:map";
+
+$colors: (success: green,
+    warning: orange,
+    danger: red);
+
+$base-colors: (white: white,
+    black: black);
+
+@debug map.get($colors, success);
+@debug map.has-key($colors, success);
+@debug map.keys($colors);
+
+$all-colors: map.merge($colors, $base-colors);
+@debug map.keys($all-colors);
+@debug $all-colors;
+@debug map.remove($colors, success);
+$colors: map.remove($colors, success);
+@debug map.keys($colors);
+@debug map.values($colors);
